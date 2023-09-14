@@ -154,6 +154,12 @@ return [
     | this array to grant expanded functionality to your applications.
     |
     */
+    'providers' => [
+        /*
+         * Package Service Providers...
+         */
+        Maatwebsite\Excel\ExcelServiceProvider::class,
+    ],
 
     'providers' => ServiceProvider::defaultProviders()->merge([
         /*
@@ -168,6 +174,7 @@ return [
         // App\Providers\BroadcastServiceProvider::class,
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
+
     ])->toArray(),
 
     /*
@@ -180,9 +187,14 @@ return [
     | the aliases are "lazy" loaded so they don't hinder performance.
     |
     */
+    'aliases' => [
+        
+        'Excel' => Maatwebsite\Excel\Facades\Excel::class,
+    ],
 
     'aliases' => Facade::defaultAliases()->merge([
         // 'Example' => App\Facades\Example::class,
+
     ])->toArray(),
 
 ];
