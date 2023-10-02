@@ -40,8 +40,9 @@
                     @endforeach
                 </tbody>
             </table>
-
-            <a  href="{{ route('export') }}" class="btn-link text-secondary"><i class="far fa-file-excel"></i></i> Importar com ficheiro excel</a>
+            <a  href="{{ route('novo') }}" class="btn-link text-secondary"> Novo</a>
+            <a  href="{{ route('import.form') }}" class="btn-link text-secondary"> importar</a>
+            <a  href="{{ route('export') }}" class="btn-link text-secondary"><i class="far fa-file-excel"></i></i> Exportar com ficheiro excel</a>
         </div>
     </div>
     <!-- JavaScript (Opcional) -->

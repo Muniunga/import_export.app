@@ -25,4 +25,5 @@ class product extends Model
 
         return $return;
     }
+    
 }

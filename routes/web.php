@@ -18,3 +18,9 @@ Route::get('/', function () {
 });
 Route::get('/',  [ExcelExportController::class, 'lista']);
 Route::get('/export',  [ExcelExportController::class, 'export'])->name('export');
+Route::get('/novo',  [ExcelExportController::class, 'novo'])->name('novo');
+Route::post('/novo',  [ExcelExportController::class, 'insert'])->name('insert');
+Route::get('/import', [ExcelExportController::class, 'showImportForm'])->name('import.form');
+Route::get('/import', [ExcelExportController::class, 'showImportForm'])->name('import.form');
+Route::post('/import',  [ExcelExportController::class, 'import'])->name('import');
+
