@@ -56,12 +56,11 @@ public function import(Request $request)
     ]);
 
     try {
-        $import = new ProductImport;
-        Excel::import($import, $request->file('file'));
-
-        return redirect()->back()->with('success', 'Produtos importados com sucesso.');
+        Excel::import(new ProductImport, $request->file('file')->store('temp'), null, \Maatwebsite\Excel\Excel::XLSX);
     } catch (\Exception $e) {
-        return redirect()->back()->withErrors(['error' => 'Ocorreu um erro durante a importação.']);
+        // Registre mensagens de erro para depuração.
+       dd($e->getMessage());
+        return redirect()->back()->withErrors(['error' => $e->getMessage()]);
     }
 }
 }
